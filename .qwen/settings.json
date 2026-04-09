@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(curl *)",
+      "Bash(pip install *)",
+      "Bash(timeout *)",
+      "Bash(where.exe *)",
+      "Bash(dir *)",
+      "Bash(\"%localappdata%\\programs\\python\\python314\\python.exe\" *)",
+      "Bash(c:\\users\\mxolis~1\\appdata\\local\\programs\\python\\python314\\python.exe *)",
+      "Bash(docker build *)",
+      "Bash(docker run *)",
+      "Bash(docker rm *)",
+      "Bash(docker stop *)"
+    ]
+  },
+  "$version": 3
+}
