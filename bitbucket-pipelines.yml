@@ -1,0 +1,21 @@
+image: docker:latest
+
+pipelines:
+  default:
+    - step:
+        name: Build & Test Docker App
+        services:
+          - docker
+        script:
+          - docker build -t mydevops-app ./week2-app
+          - docker run -d -p 5000:5000 --name ci-test mydevops-app
+          - sleep 5
+          - docker exec ci-test curl -f http://localhost:5000/health || exit 1
+          - docker stop ci-test
+          - docker rm ci-test
+          - echo "✅ Bitbucket Pipelines CI passed!"
+
+definitions:
+  services:
+    docker:
+      memory: 2048
